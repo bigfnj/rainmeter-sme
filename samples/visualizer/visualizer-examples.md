@@ -4,7 +4,7 @@
 
 ## Monstercat Visualizer (AudioLevel + Factory Lua)
 
-```
+```text
 REPO: marcopixel/monstercat-visualizer
 TYPE: visualizer (audio spectrum, bars, Lua-generated meters)
 NOTES: Factory.lua dynamically creates the bar meters and their MeasureName bindings.
@@ -101,7 +101,7 @@ UpdateDivider=-1
 
 ## SystemFetch Visualizer (Compact spectrum bars)
 
-```
+```text
 REPO: Meti0X7CB/SystemFetch
 TYPE: visualizer (AudioLevel, FrostedGlass, @include-driven)
 NOTES: Bars and band measures fully defined in included .inc files.

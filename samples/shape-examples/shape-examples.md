@@ -84,7 +84,7 @@ Shape5=Rectangle 0,360,100,50 | Fill Color 0,120,215,200 | Rotate 45 | Scale 1.5
 
 ## Progress Ring (Roundline-style via Shape)
 
-```
+```text
 PURPOSE: Circular progress indicator using Shape Arc + Calc formula.
          Replaces Roundline meter with pure Shape for more control.
 NOTES: Angle formula: value/maxValue * 2*PI for full arc.
@@ -141,7 +141,7 @@ Text=%1%
 
 ## mnmlUI Analog Clock (All-Shape hands)
 
-```
+```text
 REPO: khanhas/mnmlUI
 TYPE: clock (shape-only)
 NOTES: Hour and minute hands as rotated rounded rectangles.
@@ -188,7 +188,7 @@ DynamicVariables=1
 
 ## SystemFetch Analog Clock (Three-hand with FrostedGlass)
 
-```
+```text
 REPO: Meti0X7CB/SystemFetch
 TYPE: clock (shape-only, acrylic)
 NOTES: Second hand in accent color. FrostedGlass for Windows 11 acrylic look.
@@ -249,7 +249,7 @@ Shape=Ellipse (150*#Scale#),(150*#Scale#),(7*#Scale#) | Fill Color #SubColor# | 
 
 ## Dynamic Island Shape (Battery Expanding Animation)
 
-```
+```text
 REPO: KrazyManJ/rainmeter-dynamic-island
 TYPE: shape-only UI element
 NOTES: MouseOver expands IslandWidth via !SetVariable.

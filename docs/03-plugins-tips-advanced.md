@@ -56,6 +56,7 @@ Replaces parts of a measure's string value before display. Does not affect the n
 | `RegExpSubstitute` | `0` (default) or `1` to use Perl-compatible regex in patterns |
 
 **Rules:**
+
 - Multiple pairs: `"10":"Ten","1":"One"` — order matters; put longer patterns first
 - Single quotes can be used on either side when the other side contains double quotes
 - With `RegExpSubstitute=1`: captures referenced as `\1`, `\2`, ...; `\0` = entire match
@@ -83,6 +84,7 @@ Substitute="^(\d{1,3}).(\d{1,3}).(\d{1,3}).\d{1,3}$":"\1.\2.\3.***"
 Executes an external command, captures STDOUT as the measure's string value.
 
 **Advantages over standard action commands:**
+
 - Runs with hidden window (no cmd.exe flash)
 - Captures STDOUT output as the measure value
 - Detects completion, error codes, and timeout
@@ -90,6 +92,7 @@ Executes an external command, captures STDOUT as the measure's string value.
 **Trigger:** `[!CommandMeasure MeasureName "Run"]` — plugin does nothing until explicitly triggered.
 
 **Number value:**
+
 - `-1` = not yet run
 - `0` = running
 - `1` = success
@@ -395,7 +398,7 @@ Fonts are used in String meters via `FontFace`. Supports `.ttf` (TrueType) and `
 
 Place font files in `@Resources\Fonts\` — Rainmeter loads them automatically. No Windows installation required.
 
-```
+```text
 Skins\MySkin\@Resources\Fonts\MyFont.ttf
 ```
 
@@ -433,9 +436,10 @@ Text=Gradient Italic Text
 ```
 
 **Free font sources:**
-- Google Fonts: https://fonts.google.com/
-- DaFont: https://www.dafont.com/
-- Font Squirrel: https://www.fontsquirrel.com/
+
+- Google Fonts: <https://fonts.google.com/>
+- DaFont: <https://www.dafont.com/>
+- Font Squirrel: <https://www.fontsquirrel.com/>
 
 Check font licenses before redistributing with skins.
 
@@ -446,6 +450,7 @@ Check font licenses before redistributing with skins.
 The `ColorMatrix` option manipulates image colors in Image meters using a 5×5 matrix. Five rows, one per `ColorMatrix1`–`ColorMatrix5`, semicolon-delimited values.
 
 **Default (identity) matrix:**
+
 ```ini
 ColorMatrix1=1; 0; 0; 0; 0   ; Red channel
 ColorMatrix2=0; 1; 0; 0; 0   ; Green channel
@@ -459,6 +464,7 @@ Main diagonal: `Red, Green, Blue, Alpha`. Row 5 = constant offsets (0.0–1.0 ra
 ### Ready-to-Use Presets
 
 **Grayscale:**
+
 ```ini
 ColorMatrix1=0.33;0.33;0.33;0;0
 ColorMatrix2=0.59;0.59;0.59;0;0
@@ -468,6 +474,7 @@ ColorMatrix5=0;0;0;0;1
 ```
 
 **Invert colors:**
+
 ```ini
 ColorMatrix1=-1;0;0;0;0
 ColorMatrix2=0;-1;0;0;0
@@ -477,6 +484,7 @@ ColorMatrix5=1;1;1;0;1
 ```
 
 **Sepia:**
+
 ```ini
 ColorMatrix1=0.393;0.349;0.272;0;0
 ColorMatrix2=0.769;0.686;0.534;0;0
@@ -486,6 +494,7 @@ ColorMatrix5=0;0;0;0;1
 ```
 
 **White to Alpha (make white pixels transparent):**
+
 ```ini
 ColorMatrix1=1;0;0;-1;0
 ColorMatrix2=0;1;0;-1;0
@@ -495,6 +504,7 @@ ColorMatrix5=0;0;0;0;1
 ```
 
 **Swap RGB → BGR:**
+
 ```ini
 ColorMatrix1=0;0;1;0;0
 ColorMatrix2=0;1;0;0;0
@@ -504,6 +514,7 @@ ColorMatrix5=0;0;0;0;1
 ```
 
 **Black & White (high contrast):**
+
 ```ini
 ColorMatrix1=1.5;1.5;1.5;0;0
 ColorMatrix2=1.5;1.5;1.5;0;0
@@ -513,6 +524,7 @@ ColorMatrix5=-1;-1;-1;0;1
 ```
 
 **Polaroid:**
+
 ```ini
 ColorMatrix1=1.438;-0.062;-0.062;0;0
 ColorMatrix2=-0.122;1.378;-0.122;0;0
@@ -670,6 +682,7 @@ Options in the included file that already exist in the main file are **not** ove
 ### Practical: Stylesheet Pattern
 
 **`@Resources/MeterStyles.inc`:**
+
 ```ini
 [StyleTitle]
 StringAlign=CENTER
@@ -689,6 +702,7 @@ AntiAlias=1
 ```
 
 **`skin.ini`:**
+
 ```ini
 [Rainmeter]
 @include=#@#MeterStyles.inc
@@ -745,7 +759,7 @@ ImageName=@Resources\Images\logo.png
 
 ## Tips Index — Key Topics
 
-Full tips catalog at https://docs.rainmeter.net/tips/
+Full tips catalog at <https://docs.rainmeter.net/tips/>
 
 ### High-Value Tips
 

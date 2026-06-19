@@ -4,7 +4,7 @@
 
 ## win10widgets Battery (Large, Detailed)
 
-```
+```text
 REPO: tjmarkham/win10widgets
 TYPE: battery (PowerPlugin — percent, time remaining, charging state)
 NOTES: Group toggling shows charging vs discharging visuals.
@@ -120,7 +120,7 @@ Group=Charging
 
 ## Dynamic Island Battery (Shape animated, expanding)
 
-```
+```text
 REPO: KrazyManJ/rainmeter-dynamic-island
 TYPE: battery (Shape animated island, expand/collapse on hover)
 NOTES: Shape Container clips the battery fill bar with rounded corners.
@@ -229,7 +229,7 @@ Group=ExpandedView
 
 ## Power Plugin Reference: All States
 
-```
+```text
 PURPOSE: Comprehensive reference showing all PowerPlugin states
 TYPE: battery (reference/template)
 ```

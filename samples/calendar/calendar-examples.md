@@ -4,7 +4,7 @@
 
 ## SystemFetch Calendar (Lua-driven, FrostedGlass)
 
-```
+```text
 REPO: Meti0X7CB/SystemFetch
 TYPE: calendar (Lua script generates day grid, FrostedGlass acrylic)
 NOTES: Calendar.lua generates the day number layout as a formatted string.

@@ -4,7 +4,7 @@
 
 ## GraphShape.lua — Rolling Line Graph Generator
 
-```
+```text
 ORIGIN: marcopixel/SysDash
 PURPOSE: Takes a normalized 0-100 measure value each update, maintains a history
          buffer, and outputs SVG-like Path commands for a Shape meter to render
@@ -84,7 +84,7 @@ end
 
 ## Factory.lua — Dynamic Meter Generator
 
-```
+```text
 ORIGIN: marcopixel/monstercat-visualizer
 PURPOSE: Reads an .inc file template, creates N copies of it with substituted
          values, writes output to a temp .inc file, then triggers a skin refresh.
@@ -154,7 +154,7 @@ end
 
 ## Refresher.lua — Delayed Skin Refresh on Load
 
-```
+```text
 ORIGIN: marcopixel/SysDash
 PURPOSE: Triggers a full skin refresh after a short delay on initial load.
          Used to work around Rainmeter's @include resolution order —
@@ -186,7 +186,7 @@ end
 
 ## Calendar.lua — Month Grid Generator
 
-```
+```text
 ORIGIN: Meti0X7CB/SystemFetch
 PURPOSE: Computes the calendar grid for the current month.
          Returns a formatted multi-line string of day numbers.
@@ -261,7 +261,7 @@ end
 
 ## Inline Lua: Dynamic Conditional Text
 
-```
+```text
 PURPOSE: Using Lua inline expressions directly in measure options.
          Ternary-style logic without needing a separate script file.
 NOTES: Inline Lua is available in Calc measure formulas and in some bang parameters.
@@ -294,7 +294,7 @@ ScriptFile=#@#Scripts\MyScript.lua
 
 ## Curvs Circular Launcher Controller (Lua)
 
-```
+```text
 ORIGIN: udf/Curvs
 PURPOSE: Controls a circular ring launcher — handles hover/click/leave events,
          manages button state, calculates ring geometry for N buttons around a circle.

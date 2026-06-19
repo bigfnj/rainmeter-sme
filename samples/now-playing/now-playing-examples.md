@@ -4,7 +4,7 @@
 
 ## Illustro foobar2000 Now Playing
 
-```
+```text
 REPO: HarleyGorillason/illustro-Extended
 TYPE: now-playing (NowPlaying plugin, CAD/foobar2000)
 NOTES: MeasureName chain — first measure sets PlayerName, rest reference it.
@@ -164,7 +164,7 @@ H=1
 
 ## SysDash Media Player (Multi-source: Spotify, GPMDP, WebNowPlaying)
 
-```
+```text
 REPO: marcopixel/SysDash
 TYPE: now-playing (auto-detects player via IfMatch)
 NOTES: IfMatch on PlayerName variable switches MPMode → updates @include path.
@@ -274,7 +274,7 @@ UpdateDivider=10
 
 ## Cleartext Now Playing (Advanced Marquee + Container)
 
-```
+```text
 REPO: redsaph/cleartext
 TYPE: now-playing (marquee scroll, multi-player, hover controls)
 NOTES: Container Shape clips the scrolling title text.

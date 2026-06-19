@@ -20,7 +20,7 @@ The knowledge base covers everything: every measure type, every meter type, all 
 
 ## Repository Structure
 
-```
+```text
 rainmeter-sme/
 ├── docs/
 │   ├── 01-core-concepts-measures-variables.md   # INI format, all measures, variables, formulas
@@ -46,15 +46,19 @@ rainmeter-sme/
 ## Coverage
 
 ### Measures (all 17 types)
+
 `Calc` · `String` · `Time` · `CPU` · `Memory` · `NetIn/NetOut` · `FreeDiskSpace` · `Registry` · `Process` · `Plugin` · `Loop` · `UpTime` · `Script` · `WebParser` · `SysInfo` · `AudioLevel` · `RecycleManager`
 
 ### Meters (all 9 types)
+
 `String` · `Image` · `Bar` · `Histogram` · `Line` · `Rotator` · `Roundline` · `Button` · `Shape`
 
 ### Plugins (full reference)
+
 `AudioLevel` · `NowPlaying` · `WebParser` · `PowerPlugin` · `RunCommand` · `FileView` · `FolderInfo` · `QuotePlugin` · `InputText` · `Win7AudioPlugin` · `FrostedGlass` · `UsageMonitor` · `Perfmon`
 
 ### Advanced Topics
+
 - **Lua scripting** — SKIN/Measure/Meter objects, Initialize/Update lifecycle, bang execution, inline Lua
 - **Shape meter** — all primitives (Rectangle, RoundRectangle, Ellipse, Arc, Line, Path), all modifiers (Fill, Stroke, Rotate, Scale, Offset, LinearGradient, RadialGradient), Container clipping
 - **WebParser** — parent/child architecture, RegExp patterns, lookahead assertions for variable-count items, local files, image downloading
@@ -75,13 +79,13 @@ rainmeter-sme/
 
 Point Claude at this repo and ask for a skin:
 
-```
+```text
 Read the docs and samples in this repo, then build me a [description] skin.
 ```
 
 Or reference it in your CLAUDE.md:
 
-```
+```text
 Rainmeter knowledge base: /path/to/rainmeter-sme/
 When building Rainmeter skins: read the relevant doc section and the matching
 sample type before generating code.
@@ -105,8 +109,9 @@ sample type before generating code.
 ## Knowledge Sources
 
 Documentation scraped from:
-- https://docs.rainmeter.net/manual/ (full manual, 54 pages)
-- https://docs.rainmeter.net/tips/ (tips & tricks catalog)
+
+- <https://docs.rainmeter.net/manual/> (full manual, 54 pages)
+- <https://docs.rainmeter.net/tips/> (tips & tricks catalog)
 
 Sample skins collected from (19 repos):
 `khanhas/mnmlUI` · `HarleyGorillason/illustro-Extended` · `marcopixel/SysDash` · `marcopixel/monstercat-visualizer` · `redsaph/cleartext` · `Meti0X7CB/SystemFetch` · `Meti0X7CB/SquarePlayer` · `maze404/FluentDash` · `tjmarkham/win10widgets` · `Jax-Core/ModularPlayers` · `F1uctus/Rainautica` · `Droptop-Four/Droptop-Four` · `KrazyManJ/rainmeter-dynamic-island` · `GXX0T/NotWidgets` · `lezzthanthree/Needy-Streamer-Overload` · `Runixe786/MD3-Windows` · `udf/Curvs` · `modkavartini/catppuccin` · `IgorGreenIGM/rainmeter-wakatime`

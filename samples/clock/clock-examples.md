@@ -4,7 +4,7 @@
 
 ## Pacific Minimalist Clock
 
-```
+```text
 REPO: khanhas/mnmlUI
 TYPE: clock (digital, large display)
 NOTES: Large Pacifico font month + GeosansLight time/date. Scale variable for DPI.
@@ -56,7 +56,7 @@ X=(-30*#scale#)r
 
 ## Illustro Clock (Official Illustro Style)
 
-```
+```text
 REPO: HarleyGorillason/illustro-Extended
 TYPE: clock (digital, illustro dark panel)
 NOTES: MeterStyle pattern, background PNG, uppercase styling.
@@ -157,7 +157,7 @@ Text="%1"
 
 ## SysDash Clock (Inline Font Sizing)
 
-```
+```text
 REPO: marcopixel/SysDash
 TYPE: clock (digital, 24h / 12h switch via IfCondition)
 NOTES: InlineSetting for font variant sizing (AM/PM smaller than time digits).
@@ -232,7 +232,7 @@ Text=%1
 
 ## Clock Future Style (Shape-Only Analog Clock)
 
-```
+```text
 REPO: khanhas/mnmlUI
 TYPE: clock (shape-based analog) + digital readout
 NOTES: All-Shape analog face — hour/minute hands drawn as rotated rectangles.
@@ -310,7 +310,7 @@ X=r
 
 ## SystemFetch Analog Clock (Shape hands, FrostedGlass)
 
-```
+```text
 REPO: Meti0X7CB/SystemFetch
 TYPE: clock (shape analog, Windows 11 acrylic style)
 NOTES: FrostedGlass plugin for acrylic blur. All three hands (hour/minute/second)
@@ -374,7 +374,7 @@ AntiAlias = 1
 
 ## Retro Word Clock (Substitute for number-to-word)
 
-```
+```text
 REPO: khanhas/mnmlUI
 TYPE: clock (word display using Substitute)
 NOTES: Substitute converts numeric time to English words.

@@ -4,7 +4,7 @@
 
 ## Curvs Circular Launcher (Lua-Driven Ring Layout)
 
-```
+```text
 REPO: udf/Curvs
 TYPE: launcher (circular ring, Lua geometry, Shape buttons)
 NOTES: Lua script calculates button positions around a circle.
@@ -86,7 +86,7 @@ SolidColor=0,0,0,1
 
 ## Simple App Launcher Grid
 
-```
+```text
 PURPOSE: Template for a fixed-grid icon launcher.
          Left-click opens app. Right-click shows context menu with settings.
 NOTES: Uses Image meters for icons and String meters for labels.

@@ -32,6 +32,7 @@
 | `samples/launcher/` | Curvs circular launcher, simple grid template |
 
 ### 3. Raw Scraping Artifacts
+
 `raw-snapshots/` — browser snapshot files from Playwright sessions (preserved for reference).
 
 ---
@@ -39,20 +40,26 @@
 ## What's Left
 
 ### Priority 1 — First Proof-of-Concept Skin
+
 Build a clean system monitor as a working skin to validate the knowledge base end-to-end:
+
 - Suggested: CPU + RAM + Disk + Net panels
 - Shape meter backgrounds (no image dependencies)
 - Minimalist dark theme
 - Save under `skins/SystemMonitor/`
 
 ### Priority 2 — More Sample Types (optional)
+
 Still not covered in samples:
+
 - RSS feed reader (WebParser against an RSS/Atom feed)
 - Process/task list (top N processes by CPU)
 - Multi-monitor positioning example (using `#WORKAREAX#` variables)
 
 ### Priority 3 — Advanced Topics Not Yet Documented
+
 If going deeper:
+
 - Transformation Matrix (rotate/scale/skew meters) — `/tips/transformation-matrix-guide/`
 - Screen Position Variables (multi-monitor) — `/tips/screen-position-variables/`
 - Update Guide (optimizing update cycles) — `/tips/update-guide/`
@@ -64,7 +71,7 @@ If going deeper:
 
 ## Project File Map
 
-```
+```text
 /home/bigfnj/projects/rainmeter/
 ├── README.md                          — cheat sheet + file index
 ├── CHECKPOINT.md                      — this file

@@ -4,7 +4,7 @@
 
 ## SysDash Weather (OpenWeatherMap + WebParser)
 
-```
+```text
 REPO: marcopixel/SysDash
 TYPE: weather (current conditions, OpenWeatherMap API)
 NOTES: WebParser fetches XML from OWM. IfMatch on unit variable to set metric/imperial.
@@ -132,7 +132,7 @@ AntiAlias=1
 
 ## Illustro Network (IP via WebParser)
 
-```
+```text
 REPO: HarleyGorillason/illustro-Extended
 TYPE: network (IP lookup + upload/download live meters)
 NOTES: WebParser hits checkip.dyndns.org for external IP. NetIn/NetOut for live rates.

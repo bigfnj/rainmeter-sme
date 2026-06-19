@@ -4,7 +4,7 @@
 
 ## Illustro CPU Monitor
 
-```
+```text
 REPO: HarleyGorillason/illustro-Extended
 TYPE: system (CPU usage + top process + uptime)
 NOTES: MeterStyle pattern for consistent text styling. Bar meter for per-core usage.
@@ -173,7 +173,7 @@ Text=Uptime: %1
 
 ## SysDash CPU with Lua Line Graph
 
-```
+```text
 REPO: marcopixel/SysDash
 TYPE: system (CPU with rolling history graph via Lua)
 NOTES: GraphShape.lua generates SVG-like Path commands for a Shape meter.
@@ -247,7 +247,7 @@ Padding=0,0,0,(10*#Scale#)
 
 ## SysDash Network Graph
 
-```
+```text
 REPO: marcopixel/SysDash
 TYPE: system (network download/upload with dual Lua graphs)
 NOTES: Two GraphShape.lua instances — one per direction.

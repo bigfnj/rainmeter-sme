@@ -1,6 +1,6 @@
 # Rainmeter SME Reference — Part 2: Meters, Bangs, Lua, Plugins & Settings
 
-> Compiled from https://docs.rainmeter.net/manual/
+> Compiled from <https://docs.rainmeter.net/manual/>
 
 ---
 
@@ -29,6 +29,7 @@ Available on **all** meter types:
 | `Group` | — | Group name(s), pipe-delimited |
 
 **Relative positioning:**
+
 - `X=5r` → 5px to the right of the previous meter's left edge
 - `X=5R` → 5px to the right of the previous meter's right edge (XW)
 - `Y=5r` → 5px below previous meter's top edge
@@ -55,13 +56,15 @@ Available on all meters that display image files. Supported formats: `.png`, `.j
 | `ColorMatrix1`–`ColorMatrix5` | Identity | 5×5 color transform, one row per option, semicolon-delimited. Overrides ImageTint/ImageAlpha. |
 
 **ColorMatrix identity:**
-```
+
+```ini
 ColorMatrix1=1;0;0;0;0
 ColorMatrix2=0;1;0;0;0
 ColorMatrix3=0;0;1;0;0
 ColorMatrix4=0;0;0;1;0
 ColorMatrix5=0;0;0;0;1
 ```
+
 Rows 1–4: scale R/G/B/A. Row 5: add offset (0–1 range for rows 1–4; 0–255 for row 5 divided by 255).
 
 ---
@@ -71,10 +74,12 @@ Rows 1–4: scale R/G/B/A. Row 5: add offset (0–1 range for rows 1–4; 0–25
 `Container=MeterName` makes another meter a container/mask for the current meter.
 
 **Two effects:**
+
 1. **Positional containment** — content positioned relative to container, constrained to container's W×H
 2. **Pixel masking** — content only visible through solid pixels of container (enables shape masking, rounded corners, etc.)
 
 **Rules:**
+
 - Container meter itself is **not drawn** — only its content is visible
 - First content meter auto-positions relative to container top-left
 - Cannot nest containers (a meter cannot be both container and content)
@@ -314,6 +319,7 @@ LinearGradient MyGrad=135 | 0,0,0,255;0 | 100,100,100,255;0.5 | 0,0,0,255;1
 ### Gradients
 
 **Linear:**
+
 ```ini
 LinearGradient GradName=Angle | Color1;Stop1 | Color2;Stop2 | ...
 ; Angle: 0=R→L, 90=B→T, 180=L→R, 270=T→B
@@ -321,6 +327,7 @@ LinearGradient GradName=Angle | Color1;Stop1 | Color2;Stop2 | ...
 ```
 
 **Radial:**
+
 ```ini
 RadialGradient GradName=CenterX,CenterY[,OffsetX,OffsetY,RadiusX,RadiusY] | Color;Stop | ...
 ```
@@ -330,6 +337,7 @@ Use `LinearGradient1` / `RadialGradient1` for alternate gamma-corrected interpol
 Mouse hit detection on shapes uses solid pixels only — transparent areas pass clicks through.
 
 ### Extend Modifier
+
 `Extend OptionName1,OptionName2` — references named options containing shared modifiers. Cannot cascade.
 
 ---
@@ -339,6 +347,7 @@ Mouse hit detection on shapes uses solid pixels only — transparent areas pass 
 Available on any meter or in `[Rainmeter]` section. Meter actions override skin-level actions.
 
 ### Click Actions
+
 ```ini
 LeftMouseUpAction=[!Refresh]
 LeftMouseDownAction=...        ; disables skin dragging!
@@ -350,12 +359,14 @@ X2MouseUpAction=...            ; mouse button 5
 ```
 
 ### Hover Actions
+
 ```ini
 MouseOverAction=[!SetOption MeterText FontColor "255,255,0,255"][!UpdateMeter *][!Redraw]
 MouseLeaveAction=[!SetOption MeterText FontColor "255,255,255,255"][!UpdateMeter *][!Redraw]
 ```
 
 ### Scroll Actions
+
 ```ini
 MouseScrollUpAction=[!CommandMeasure MeasureVolume "ChangeVolume 5"]
 MouseScrollDownAction=[!CommandMeasure MeasureVolume "ChangeVolume -5"]
@@ -364,6 +375,7 @@ MouseScrollRightAction=...
 ```
 
 ### Cursor Options
+
 | Option | Default | Description |
 |---|---|---|
 | `MouseActionCursor` | `1` | Show hand cursor on hover over clickable meters |
@@ -377,6 +389,7 @@ Bangs are action commands. Syntax: `[!BangName Param1 Param2]` or `[!BangName "P
 Most accept optional `Config` parameter. `*` = all loaded skins. Omit = current skin.
 
 ### Application Bangs
+
 | Bang | Description |
 |---|---|
 | `!About [Tab]` | Open About. Tabs: `Log`, `Skins`, `Plugins`, `Version` |
@@ -391,6 +404,7 @@ Most accept optional `Config` parameter. `*` = all loaded skins. Omit = current 
 | `!SetWallpaper "File"[,"Position"]` | Set wallpaper. Positions: Center/Tile/Stretch/Fit/Fill/Span |
 
 ### Skin Bangs
+
 | Bang | Description |
 |---|---|
 | `!Refresh [Config]` | Reload skin from file |
@@ -415,6 +429,7 @@ Most accept optional `Config` parameter. `*` = all loaded skins. Omit = current 
 | `!FadeDuration "ms" [Config]` | Set fade duration |
 
 ### Measure Bangs
+
 | Bang | Description |
 |---|---|
 | `!EnableMeasure "Measure" [Config]` | Enable measure |
@@ -427,6 +442,7 @@ Most accept optional `Config` parameter. `*` = all loaded skins. Omit = current 
 | `!CommandMeasure "Measure" "Command" [Config]` | Send command to plugin/script |
 
 ### Meter Bangs
+
 | Bang | Description |
 |---|---|
 | `!ShowMeter/!HideMeter/!ToggleMeter "Meter" [Config]` | Show/hide/toggle meter |
@@ -435,6 +451,7 @@ Most accept optional `Config` parameter. `*` = all loaded skins. Omit = current 
 | `!ShowMeterGroup/!HideMeterGroup/!ToggleMeterGroup/!UpdateMeterGroup "Group" [Config]` | Act on group |
 
 ### Option / Variable Bangs
+
 | Bang | Description |
 |---|---|
 | `!SetOption "Section" "Option" "Value" [Config]` | Set option dynamically |
@@ -444,9 +461,10 @@ Most accept optional `Config` parameter. `*` = all loaded skins. Omit = current 
 | `!WriteKeyValue "Section" "Key" "Value" [FilePath]` | Write permanently to INI |
 
 ### Mouse Action State Bangs
+
 Three states: **Enabled** (fires normally), **Disabled** (detected, no action), **Cleared** (not detected — click-through).
 
-```
+```ini
 !DisableMouseAction "Meter" "MouseAction(s)" [Config]
 !ClearMouseAction "Meter" "MouseAction(s)" [Config]
 !EnableMouseAction "Meter" "MouseAction(s)" [Config]
@@ -457,7 +475,8 @@ Three states: **Enabled** (fires normally), **Disabled** (detected, no action), 
 Group variants: `!DisableMouseActionGroup`, `!DisableMouseActionSkinGroup` etc.
 
 ### Sound (not bangs — no `!`)
-```
+
+```ini
 Play "SoundFile.wav"
 PlayLoop "SoundFile.wav"
 PlayStop
@@ -477,6 +496,7 @@ MyOption=Hello
 ```
 
 ### Reserved Lua Functions
+
 ```lua
 function Initialize()
     -- Called once on skin load/refresh (even if disabled)
@@ -493,6 +513,7 @@ end
 ```
 
 ### SKIN Object Functions
+
 ```lua
 SKIN:GetMeasure("MeasureName")     -- returns measure object or nil
 SKIN:GetMeter("MeterName")         -- returns meter object or nil
@@ -507,6 +528,7 @@ SKIN:ParseFormula("(2 + 2)")       -- returns number or nil; must have parenthes
 ```
 
 ### Measure Object Functions
+
 ```lua
 local m = SKIN:GetMeasure("MeasureName")
 m:GetValue()           -- number value
@@ -523,6 +545,7 @@ m:Enable()
 ```
 
 ### Meter Object Functions
+
 ```lua
 local mt = SKIN:GetMeter("MeterName")
 mt:GetOption("Name"[, "Default"[, bReplaceMeasures]])
@@ -534,21 +557,27 @@ mt:Hide() / Show()
 ```
 
 ### SELF Object
+
 Pre-created reference to the Script measure itself. Supports all measure object functions.
 
 ### CommandMeasure Integration
+
 ```ini
 LeftMouseUpAction=[!CommandMeasure "MeasureScript" "DoSomething('arg', 42)"]
 ```
+
 ```lua
 function DoSomething(strArg, numArg)
     SKIN:Bang("!SetVariable", "MyVar", strArg)
 end
 ```
+
 Use single quotes for Lua strings inside Rainmeter bang strings.
 
 ### Inline Lua
+
 Call Lua functions inline anywhere section variables are allowed:
+
 ```ini
 Text=[&MeasureScript:GetFormattedValue(42, 'prefix')]
 DynamicVariables=1    ; required
@@ -559,14 +588,17 @@ Access global Lua variables: `[&MeasureScript:myGlobalVar]`
 Nesting syntax in inline Lua: `[#VarName]` = `#VarName#`, `[&MeasureName]` = measure value
 
 ### Include External Files
+
 ```lua
 dofile(SKIN:GetVariable('@') .. 'Scripts/Helpers.lua')
 ```
 
 ### Restrictions
+
 No `require`, `os.exit`, `os.setlocale`, `io.popen`, `collectgarbage`, no external compiled libs.
 
 ### Logging
+
 ```lua
 print("Debug message")  -- appears in About > Log
 ```
@@ -684,6 +716,7 @@ Stored in `%APPDATA%\Rainmeter\Rainmeter.ini`.
 | `DragGroup` | — | Drag Group name(s) |
 
 **Centering formula:**
+
 ```ini
 WindowX=(#WORKAREAX# + (#WORKAREAWIDTH# / 2) - (SkinWidth / 2))
 WindowY=(#WORKAREAY# + (#WORKAREAHEIGHT# / 2) - (SkinHeight / 2))

@@ -1,6 +1,6 @@
 # Rainmeter SME Reference — Part 1: Core Concepts, Measures & Variables
 
-> Compiled from https://docs.rainmeter.net/manual/
+> Compiled from <https://docs.rainmeter.net/manual/>
 
 ---
 
@@ -20,7 +20,7 @@ Rainmeter is a free, open-source desktop customization **platform** for Windows.
 
 ### File Structure
 
-```
+```text
 C:\Users\YourName\Documents\Rainmeter\Skins\ConfigName\SkinName.ini
 ```
 
@@ -43,6 +43,7 @@ Text=Hello, world!
 ```
 
 ### INI Format Rules
+
 1. All section names within a skin must be **unique**
 2. All option names within a section must be **unique**
 3. Section/option names should be **alphanumeric only** — no spaces or punctuation
@@ -72,6 +73,7 @@ Text=Hello, world!
 | `@Resources\Images\` | Shared images |
 
 ### Update Cycle
+
 - Default: **1000 ms** (`Update` in `[Rainmeter]`)
 - Each cycle: measures update → meters update → skin redraws
 - `UpdateDivider` on individual meters/measures skips cycles
@@ -293,10 +295,12 @@ Options valid for all measure types:
 | `Group` | (none) | Group membership |
 
 **Disabled vs. Paused:**
+
 - `Disabled` → 0 numerically, may return old string
 - `Paused` → freezes at last known number AND string
 
 **Substitute / RegExpSubstitute:**
+
 ```ini
 Substitute="find":"replace","find2":"replace2"
 RegExpSubstitute=1   ; treat find patterns as PCRE regex
@@ -307,6 +311,7 @@ RegExpSubstitute=1   ; treat find patterns as PCRE regex
 ## PART 7: ALL MEASURE TYPES
 
 ### Calc
+
 ```ini
 Measure=Calc
 Formula=MeasureOne + 50
@@ -321,15 +326,18 @@ Number bases: `0b` (binary), `0o` (octal), `0x` (hex)
 Reference other measures in Formula without brackets — no DynamicVariables needed.
 
 ### String
+
 ```ini
 Measure=String
 String=Red, Green, Blue
 RegExpSubstitute=1
 Substitute="Green":"Yellow"
 ```
+
 Formulas NOT evaluated inside `String=`. InvertMeasure NOT valid.
 
 ### Time
+
 ```ini
 Measure=Time
 Format=%H:%M:%S
@@ -343,31 +351,38 @@ Add `#` to remove leading zeros: `%#d`, `%#H`, etc.
 `TimeStamp` accepts Windows timestamp, DST codes (DSTNextStart, DSTNextEnd, DSTStart, DSTEnd), or formatted date string + `TimeStampFormat`.
 
 ### NetIn / NetOut / NetTotal
+
 ```ini
 Measure=NetIn
 Interface=Best    ; or NIC name/alias/index/0=all
 Cumulative=0      ; 1 = cumulative total (reset with !ResetStats)
 UseBits=0         ; 1 = bits/sec instead of bytes/sec
 ```
+
 Value in bytes/sec. Set MinValue/MaxValue in **bits** — Rainmeter auto-converts.
 Use `Update=1000` or UpdateDivider so measures update once/second.
 
 ### CPU
+
 ```ini
 Measure=CPU
 Processor=0    ; 0=average, 1/2/3...=specific core
 ```
+
 Returns 0–100%.
 
 ### PhysicalMemory / SwapMemory / Memory
+
 ```ini
 Measure=PhysicalMemory
 InvertMeasure=1    ; free instead of used
 Total=0            ; 1 = return total instead of used
 ```
+
 Auto-range: MinValue=0, MaxValue=total size.
 
 ### FreeDiskSpace
+
 ```ini
 Measure=FreeDiskSpace
 Drive=C:
@@ -377,9 +392,11 @@ Type=0            ; 1 = string = drive type, number = type code
 IgnoreRemovable=1 ; 0 = measure USB/removable drives
 DiskQuota=1       ; 0 = ignore Windows user disk quotas
 ```
+
 Drive types (Type=1): Error(0), Removed(1), Removable(3), Fixed(4), Network(5), CDRom(6), Ram(7)
 
 ### Registry
+
 ```ini
 Measure=Registry
 RegHKey=HKEY_CURRENT_USER
@@ -388,23 +405,29 @@ RegValue=Setting
 OutputType=Value         ; Value, SubKeyList, ValueList
 OutputDelimiter=#CRLF#
 ```
+
 Supported types: REG_SZ, REG_EXPAND_SZ, REG_MULTI_SZ, REG_DWORD, REG_QWORD, REG_BINARY
 
 ### Process
+
 ```ini
 Measure=Process
 ProcessName=Firefox.exe
 ```
+
 Returns `1` (running) or `-1` (not running).
 
 ### Plugin
+
 ```ini
 Measure=Plugin
 Plugin=PluginName
 ```
+
 Built-in: ActionTimer, AudioLevel, CoreTemp, FileView, FolderInfo, InputText, Ping, Power, Quote, ResMon, RunCommand, SpeedFan, UsageMonitor, Win7Audio, WindowMessage
 
 ### Loop
+
 ```ini
 Measure=Loop
 StartValue=1
@@ -412,18 +435,22 @@ EndValue=100
 Increment=1
 LoopCount=0    ; 0 = endless
 ```
+
 All values must be integers. Reset: `!CommandMeasure MeasureName "Reset"`
 
 ### Uptime
+
 ```ini
 Measure=Uptime
 Format=%4!i!d %3!i!h %2!i!m %1!i!s
 AddDaysToHours=1    ; adds days×24 to %3 if %4 not in Format
 ```
+
 Format codes: `%4`=days, `%3`=hours, `%2`=minutes, `%1`=seconds
 Modifiers: `!i!`=no zeros, `!02i!`=zero-padded
 
 ### Script (Lua)
+
 ```ini
 Measure=Script
 ScriptFile=#@#Scripts/MyScript.lua
@@ -431,6 +458,7 @@ MyCustomOption=SomeValue
 ```
 
 ### WebParser
+
 ```ini
 [MeasureParent]
 Measure=WebParser
@@ -443,22 +471,26 @@ Measure=WebParser
 URL=[MeasureParent]
 StringIndex=1
 ```
+
 Options: `Download=1` (save to temp), `ErrorString`, `LogSubstringErrors`, `CodePage`, `ProxyServer`, `UserAgent`, `Header`, `Flags`
 Actions: `FinishAction`, `OnConnectErrorAction`, `OnRegExpErrorAction`, `OnDownloadErrorAction`
 Force re-download: `!CommandMeasure "MeasureParent" "Update"`
 
 ### SysInfo
+
 ```ini
 Measure=SysInfo
 SysInfoType=COMPUTER_NAME
 SysInfoData=Best    ; for network: adapter name/alias/index/Best
 ```
+
 Types — General: `COMPUTER_NAME`, `USER_NAME`, `USER_SID`, `USER_LOGONTIME`, `OS_PRODUCT_NAME`, `OS_VERSION`, `OS_BITS`, `PAGESIZE`, `IDLE_TIME`
 Network: `HOST_NAME`, `IP_ADDRESS`, `GATEWAY_ADDRESS`, `MAC_ADDRESS`, `ADAPTER_TYPE`, `ADAPTER_STATE`, `LAN_CONNECTIVITY`, `INTERNET_CONNECTIVITY`, `DNS_SERVER` + more
 Monitor: `NUM_MONITORS`, `SCREEN_WIDTH`, `SCREEN_HEIGHT`, `WORK_AREA_WIDTH`, `WORK_AREA_HEIGHT` + more
 Time Zone: `TIMEZONE_ISDST`, `TIMEZONE_BIAS`, `TIMEZONE_STANDARD_NAME`, `TIMEZONE_DAYLIGHT_NAME`
 
 ### AudioLevel
+
 ```ini
 [MeasureParent]
 Measure=Plugin
@@ -483,24 +515,30 @@ Type=RMS           ; RMS, Peak, FFT, FFTFreq, Band, BandFreq, Format, DeviceStat
 Valid in `Formula=`, `IfCondition=`, and anywhere a formula is expected.
 
 ### Operators
+
 `+` `-` `*` `/` `%` (mod) `**` (power) `&` (bitwise AND) `|` (bitwise OR) `^` (bitwise XOR) `~` (bitwise NOT) `<<` `>>` (bit shift)
 
 ### Comparison
+
 `<` `>` `<=` `>=` `=` `!=`
 
 ### Logic
+
 `&&` `||` `!`
 
 ### Ternary
+
 `condition ? true_value : false_value`
 
 ### Math Functions
+
 `Abs(x)` `Ceil(x)` `Floor(x)` `Round(x[,decimals])` `Sqrt(x)` `Exp(x)` `Log(x)` `Ln(x)`
 `Min(x,y)` `Max(x,y)` `Clamp(x,min,max)`
 `Sin(x)` `Cos(x)` `Tan(x)` `ASin(x)` `ACos(x)` `ATan(x)` `ATan2(y,x)`
 `Rad(x)` `Deg(x)` (degrees↔radians)
 
 ### Special
+
 `Random` (Calc measure), `Counter` (Calc measure)
 Constants: `PI` `E`
 
@@ -521,6 +559,7 @@ IfTrueAction2=...
 Multiple conditions supported (IfConditionN up to N=20).
 
 `IfMatch` / `IfMatchAction` / `IfNotMatchAction` — regex match on string value:
+
 ```ini
 IfMatch=^\d+$
 IfMatchAction=[!Log "Value is numeric"]
